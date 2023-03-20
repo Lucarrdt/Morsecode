@@ -1,7 +1,7 @@
 import time
 import RPi.GPIO as GPIO
 
-# Set up the GPIO
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(18, GPIO.OUT)
@@ -42,3 +42,8 @@ with open('text.txt', 'r') as f:
         'Y': 'LSLL',
         'Z': 'LLSS'
     }
+
+    def transmit_morse_code(message):
+        for letter in message:
+            if letter == ' ':
+                time.sleep(0.5)
